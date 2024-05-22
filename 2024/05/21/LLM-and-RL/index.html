@@ -14,7 +14,7 @@
 <meta property="og:description" content="There are various ways in large language model enhanced reinforcement learning. LLM as information processor Feature representation extractor  Directly use frozen pre-trained model to extract embeddin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-21T03:17:14.000Z">
-<meta property="article:modified_time" content="2024-05-22T12:25:51.581Z">
+<meta property="article:modified_time" content="2024-05-22T12:29:32.853Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -179,17 +179,25 @@
 </ul>
 </li>
 </ul>
-<h1 id="Large-language-model-as-decision-maker"><a href="#Large-language-model-as-decision-maker" class="headerlink" title="Large language model as decision maker"></a>Large language model as decision maker</h1><p>Motivation: the power of LLMs. Decision Transformer [11] show great potential in offline RL when dealing with sparse-reward and long-horizon tasks [12] while LLMs are large scale Transformer-based model.<br>    - Direct decision maker<br>    It directly predicts the actions from the perspective of sequence modeling. The objective is to minimize the square error of actions. There is a lot of work in this area:<br>    [13] uses pre-trained LLM as general model for task-specific model learning across different environment by adding the goals along with observations as input and convert them into sequential data.<br>    The key idea of [14] is to leverage captions describing the next subgoals before do actions, improving the performance of reasoning policy.<br>    [15] employ pre-trained LLMs with LoRA fine-tuning method that augments the pre-trained knowledge with in-domain knowledge.<br>    - Indirect decision maker<br>    Key ideas: LLMs instruct action choices by generating action candidates or provide reference policy, addressing the challenge like enormous action spaces.<br>        - Action candidates<br>        To solve the problem that for any given state, only a small fraction of actions can be accessed. [111] proposes a framework to generate a set of action candidates for each state by training the language models based on game history.<br>        [102] is the extension of [111] in the field of robotic. The agent integrates LLM to generate action planning and execute low-level skills. Different from [111], the LLM is not trained and the action candidates are generated based on prompting with the history and current observation.<br>        - Reference policy:<br>        LLMs provide a reference policy, then policy updating process is modified based on it. While, the strategy for model convergence may not be quite the same as human preferences.<br>        [16] uses LLMs to generate prior policy based on human instructions and use this prior to regularize the objective of RL.  </p>
-<h1 id="Large-language-model-as-Generator"><a href="#Large-language-model-as-Generator" class="headerlink" title="Large language model as Generator"></a>Large language model as Generator</h1><pre><code>- World Model Simulator
-Motivation: In order to apply RL to risk data-collection process or real world
-    + Trajectory rolloutor: 
-    Use LLMs to synthesize trajectory.
-    + Dynamics representation learner: 
-Using representation learning techniques, the latent representation of the future can be learned to assist decision-making.
-- Policy Interpreter
-    Objective: Explain the decision-making process of learning agent.
-    Using the trajectory history of states and actions as context information, LLMs can generate interpretations for current policy.
-</code></pre>
+<h1 id="Large-language-model-as-decision-maker"><a href="#Large-language-model-as-decision-maker" class="headerlink" title="Large language model as decision maker"></a>Large language model as decision maker</h1><ul>
+<li>Motivation: the power of LLMs. Decision Transformer [11] show great potential in offline RL when dealing with sparse-reward and long-horizon tasks [12] while LLMs are large scale Transformer-based model.<ul>
+<li>Direct decision maker<br>  It directly predicts the actions from the perspective of sequence modeling. The objective is to minimize the square error of actions. There is a lot of work in this area:<br>  [13] uses pre-trained LLM as general model for task-specific model learning across different environment by adding the goals along with observations as input and convert them into sequential data.<br>  The key idea of [14] is to leverage captions describing the next subgoals before do actions, improving the performance of reasoning policy.<br>  [15] employ pre-trained LLMs with LoRA fine-tuning method that augments the pre-trained knowledge with in-domain knowledge.</li>
+<li>Indirect decision maker<br>  Key ideas: LLMs instruct action choices by generating action candidates or provide reference policy, addressing the challenge like enormous action spaces.<ul>
+<li>Action candidates<br>  To solve the problem that for any given state, only a small fraction of actions can be accessed. [111] proposes a framework to generate a set of action candidates for each state by training the language models based on game history.<br>  [102] is the extension of [111] in the field of robotic. The agent integrates LLM to generate action planning and execute low-level skills. Different from [111], the LLM is not trained and the action candidates are generated based on prompting with the history and current observation.</li>
+<li>Reference policy:<br>  LLMs provide a reference policy, then policy updating process is modified based on it. While, the strategy for model convergence may not be quite the same as human preferences.<br>  [16] uses LLMs to generate prior policy based on human instructions and use this prior to regularize the objective of RL.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Large-language-model-as-Generator"><a href="#Large-language-model-as-Generator" class="headerlink" title="Large language model as Generator"></a>Large language model as Generator</h1><ul>
+<li>World Model Simulator<br>Motivation: In order to apply RL to risk data-collection process or real world<ul>
+<li>Trajectory rolloutor:<br>  Use LLMs to synthesize trajectory.</li>
+<li>Dynamics representation learner:<br>Using representation learning techniques, the latent representation of the future can be learned to assist decision-making.</li>
+</ul>
+</li>
+<li>Policy Interpreter<br>Objective: Explain the decision-making process of learning agent.<br>Using the trajectory history of states and actions as context information, LLMs can generate interpretations for current policy.</li>
+</ul>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1>
   </div>
 </article>
