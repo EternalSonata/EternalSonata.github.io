@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="There are various ways in large language model enhanced reinforcement learning.     Figure 1. Summary of LLM enhenced RL[19]   LLM as information processor Feature representation extractor  Directly u">
+    <meta name="description" content="There are various ways in large language model enhanced reinforcement learning.    Figure 1. Summary of LLM enhenced RL[19]   LLM as information processor Feature representation extractor  Directly us">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LLM and RL">
 <meta property="og:url" content="https://eternalsonata.github.io/2024/05/21/LLM-and-RL/index.html">
 <meta property="og:site_name" content="Alin">
-<meta property="og:description" content="There are various ways in large language model enhanced reinforcement learning.     Figure 1. Summary of LLM enhenced RL[19]   LLM as information processor Feature representation extractor  Directly u">
+<meta property="og:description" content="There are various ways in large language model enhanced reinforcement learning.    Figure 1. Summary of LLM enhenced RL[19]   LLM as information processor Feature representation extractor  Directly us">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://eternalsonata.github.io/images/LLM_RL.png">
 <meta property="article:published_time" content="2024-05-21T03:17:14.000Z">
@@ -58,8 +58,7 @@
 	
 <meta name="generator" content="Hexo 7.2.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -81,6 +80,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/05/23/Reinforcement-Learning/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Next post" href="/2024/05/21/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -153,8 +154,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h3 id="There-are-various-ways-in-large-language-model-enhanced-reinforcement-learning"><a href="#There-are-various-ways-in-large-language-model-enhanced-reinforcement-learning" class="headerlink" title="There are various ways in large language model enhanced reinforcement learning."></a>There are various ways in large language model enhanced reinforcement learning.</h3><p><img src="/images/LLM_RL.png" alt="image" title="Summary"></p>
-<!-- <center style="font-size:14px;color:#000000;text-decoration:underline">Figure 1. Summary of LLM enhenced RL[19]</center> -->
+    <h3 id="There-are-various-ways-in-large-language-model-enhanced-reinforcement-learning"><a href="#There-are-various-ways-in-large-language-model-enhanced-reinforcement-learning" class="headerlink" title="There are various ways in large language model enhanced reinforcement learning."></a>There are various ways in large language model enhanced reinforcement learning.</h3><p><img src="/images/LLM_RL.png" alt="image" title="Summary"><br><!-- <center style="font-size:14px;color:#000000;text-decoration:underline">Figure 1. Summary of LLM enhenced RL[19]</center> --></p>
 <div style="text-align:center">
   Figure 1. Summary of LLM enhenced RL[19]
 </div>
@@ -162,36 +162,36 @@
 <h1 id="LLM-as-information-processor"><a href="#LLM-as-information-processor" class="headerlink" title="LLM as information processor"></a>LLM as information processor</h1><ul>
 <li><p><strong>Feature representation extractor</strong></p>
 <ul>
-<li>Directly use frozen pre-trained model to extract embeddings from observation.<br>  [1] uses frozen pre-trained language transformer to extract history representation and compression. Mapping previous observations to a compressed representation and then concatenate it with current observation.  </li>
-<li>Using contrastive learning to fine-tune the pre-trained model to learn an invariant feature representation, improving the generalization capability. The key idea is to learn the representations by contrasting positive examples against negatives.</li>
+<li>Directly use frozen pre-trained model to extract embeddings from observation.<br>[1] uses frozen pre-trained language transformer to extract history representation and compression. Mapping previous observations to a compressed representation and then concatenate it with current observation.  </li>
+<li>Using contrastive learning to fine-tune the pre-trained model to learn an invariant feature representation, improving the generalization capability. The key idea is to learn the representations by contrasting positive examples against negatives.  </li>
 </ul>
 </li>
 <li><p><strong>Language translator</strong><br>Motivation: Using LLM transforms natural language information into formal task-specific languages, assisting learning process of RL agent.</p>
 <ul>
-<li><strong>Instruction information translation:</strong><br>  Translate natural language-based instructions to task-related unique language. [2] proposes an inside out scheme, preventing policies from directly exposed to natural language instructions and improving the efficiency of policy learning.  </li>
-<li><strong>Environment information translation:</strong><br>  Translate natural language environment information into formal domain-specific language. (convert natural language sentences into grounded usable knowledge for the agent).<br>  [3]introduce RLang, it is a grounded formal language that can express the information about all components of a task (policy, reward, plans and transition function).</li>
+<li><strong>Instruction information translation:</strong><br>Translate natural language-based instructions to task-related unique language. [2] proposes an inside out scheme, preventing policies from directly exposed to natural language instructions and improving the efficiency of policy learning.  </li>
+<li><strong>Environment information translation:</strong><br>Translate natural language environment information into formal domain-specific language. (convert natural language sentences into grounded usable knowledge for the agent).<br>[3]introduce RLang, it is a grounded formal language that can express the information about all components of a task (policy, reward, plans and transition function).  </li>
 </ul>
 </li>
 </ul>
 <h1 id="Large-language-model-as-reward-designer"><a href="#Large-language-model-as-reward-designer" class="headerlink" title="Large language model as reward designer"></a>Large language model as reward designer</h1><ul>
 <li><p><strong>Implicit reward model</strong><br>Key idea: LLM provides auxiliary or overall reward value based on the understanding of task objectives and observations.  </p>
 <ul>
-<li><strong>Direct prompting:</strong><br>  [4] considers LLM as proxy reward function. Prompting LLM with some examples of desirable behaviors and the preferences description of the desired behaviors.<br>  [5] introduce a framework that provides interactive rewards mimicking human feedback based on LLMs’ real-time understanding of the agent’s behavior. By designing two prompts, one let LLM understand scenario and the other one instruct LLM about evaluation criterions.  </li>
-<li><strong>Alignment scoring:</strong><br>  In computer vision, some literatures use VLM as reward model to align multi-model data and calculate cosine similarity between visual state embeddings and language description embeddings.</li>
+<li><strong>Direct prompting:</strong><br>[4] considers LLM as proxy reward function. Prompting LLM with some examples of desirable behaviors and the preferences description of the desired behaviors.<br>[5] introduce a framework that provides interactive rewards mimicking human feedback based on LLMs’ real-time understanding of the agent’s behavior. By designing two prompts, one let LLM understand scenario and the other one instruct LLM about evaluation criterions.  </li>
+<li><strong>Alignment scoring:</strong><br>In computer vision, some literatures use VLM as reward model to align multi-model data and calculate cosine similarity between visual state embeddings and language description embeddings. </li>
 </ul>
 </li>
 <li><p><strong>Explicit Reward Model</strong><br><strong>Key idea:</strong> Using LLMs generates executable codes that explicitly specify the details of the calculation process.<br><strong>Strengths:</strong> transparently reflects the reasoning and logical process of LLMs and thus is readable for humans to further evaluate and optimize.</p>
 <ul>
-<li>[6]defines lower-level reward parameters based on high-level instructions.<br>  [7, 8] use self-refinement mechanism for automated reward function design, including initial design, evaluation and self-refinement loop.<br>  [9] develops a reward optimization algorithm with self-reflection, which leverages environment source code and task description to sample reward function candidates from a coding LLM, and evaluate them over RL simulation.<br>  [10] uses the similar idea comparing with [9], generates shaped dense reward functions as executable programs based on the environment description. It executes the learned policy in the environment, requesting human feedback and refining the reward accordingly.</li>
+<li>[6]defines lower-level reward parameters based on high-level instructions.<br>[7, 8] use self-refinement mechanism for automated reward function design, including initial design, evaluation and self-refinement loop.<br>[9] develops a reward optimization algorithm with self-reflection, which leverages environment source code and task description to sample reward function candidates from a coding LLM, and evaluate them over RL simulation.<br>[10] uses the similar idea comparing with [9], generates shaped dense reward functions as executable programs based on the environment description. It executes the learned policy in the environment, requesting human feedback and refining the reward accordingly.  </li>
 </ul>
 </li>
 </ul>
 <h1 id="Large-language-model-as-decision-maker"><a href="#Large-language-model-as-decision-maker" class="headerlink" title="Large language model as decision maker"></a>Large language model as decision maker</h1><ul>
 <li><strong>Motivation</strong>: the power of LLMs. Decision Transformer [11] show great potential in offline RL when dealing with sparse-reward and long-horizon tasks [12] while LLMs are large scale Transformer-based model.<ul>
-<li><strong>Direct decision maker</strong><br>  It directly predicts the actions from the perspective of sequence modeling. The objective is to minimize the square error of actions. There is a lot of work in this area:<br>  [13] uses pre-trained LLM as general model for task-specific model learning across different environment by adding the goals along with observations as input and convert them into sequential data.<br>  The key idea of [14] is to leverage captions describing the next subgoals before do actions, improving the performance of reasoning policy.<br>  [15] employ pre-trained LLMs with LoRA fine-tuning method that augments the pre-trained knowledge with in-domain knowledge.</li>
-<li><strong>Indirect decision maker</strong><br>  Key ideas: LLMs instruct action choices by generating action candidates or provide reference policy, addressing the challenge like enormous action spaces.<ul>
-<li><strong>Action candidates</strong><br>  To solve the problem that for any given state, only a small fraction of actions can be accessed. [16] proposes a framework to generate a set of action candidates for each state by training the language models based on game history.<br>  [17] is the extension of [16] in the field of robotic. The agent integrates LLM to generate action planning and execute low-level skills. Different from [16], the LLM is not trained and the action candidates are generated based on prompting with the history and current observation.</li>
-<li><strong>Reference policy:</strong><br>  LLMs provide a reference policy, then policy updating process is modified based on it. While, the strategy for model convergence may not be quite the same as human preferences.<br>  [18] uses LLMs to generate prior policy based on human instructions and use this prior to regularize the objective of RL.</li>
+<li><strong>Direct decision maker</strong><br>It directly predicts the actions from the perspective of sequence modeling. The objective is to minimize the square error of actions. There is a lot of work in this area:<br>[13] uses pre-trained LLM as general model for task-specific model learning across different environment by adding the goals along with observations as input and convert them into sequential data.<br>The key idea of [14] is to leverage captions describing the next subgoals before do actions, improving the performance of reasoning policy.<br>[15] employ pre-trained LLMs with LoRA fine-tuning method that augments the pre-trained knowledge with in-domain knowledge.</li>
+<li><strong>Indirect decision maker</strong><br>Key ideas: LLMs instruct action choices by generating action candidates or provide reference policy, addressing the challenge like enormous action spaces.<ul>
+<li><strong>Action candidates</strong><br>To solve the problem that for any given state, only a small fraction of actions can be accessed. [16] proposes a framework to generate a set of action candidates for each state by training the language models based on game history.<br>[17] is the extension of [16] in the field of robotic. The agent integrates LLM to generate action planning and execute low-level skills. Different from [16], the LLM is not trained and the action candidates are generated based on prompting with the history and current observation.</li>
+<li><strong>Reference policy:</strong><br>LLMs provide a reference policy, then policy updating process is modified based on it. While, the strategy for model convergence may not be quite the same as human preferences.<br>[18] uses LLMs to generate prior policy based on human instructions and use this prior to regularize the objective of RL.  </li>
 </ul>
 </li>
 </ul>
@@ -199,13 +199,13 @@
 </ul>
 <h1 id="Large-language-model-as-Generator"><a href="#Large-language-model-as-Generator" class="headerlink" title="Large language model as Generator"></a>Large language model as Generator</h1><ul>
 <li><strong>World Model Simulator</strong><br><strong>Motivation</strong>: In order to apply RL to risk data-collection process or real world<ul>
-<li><strong>Trajectory rolloutor:</strong><br>  Use LLMs to synthesize trajectory.</li>
+<li><strong>Trajectory rolloutor:</strong><br>Use LLMs to synthesize trajectory.</li>
 <li><strong>Dynamics representation learner:</strong><br>Using representation learning techniques, the latent representation of the future can be learned to assist decision-making.</li>
 </ul>
 </li>
 <li><strong>Policy Interpreter</strong><br><strong>Objective:</strong> Explain the decision-making process of learning agent.<br>Using the trajectory history of states and actions as context information, LLMs can generate interpretations for current policy.</li>
 </ul>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><p>[1]	   F. Paischer et al., “History compression via language models in reinforcement learning,” in International Conference on Machine Learning, 2022: PMLR, pp. 17156-17185.<br>[2]	   J.-C. Pang, X.-Y. Yang, S.-H. Yang, and Y. Yu, “Natural Language-conditioned Reinforcement Learning with Inside-out Task Language Development and Translation,” arXiv preprint arXiv:2302.09368, 2023.<br>[3]	   B. A. Spiegel, Z. Yang, W. Jurayj, K. Ta, S. Tellex, and G. Konidaris, “Informing Reinforcement Learning Agents by Grounding Natural Language to Markov Decision Processes.”<br>[4]	   M. Kwon, S. M. Xie, K. Bullard, and D. Sadigh, “Reward design with language models,” arXiv preprint arXiv:2303.00001, 2023.<br>[5]    K. Chu, X. Zhao, C. Weber, M. Li, and S. Wermter, “Accelerating Reinforcement Learning of Robotic Manipulations via Feedback from Large Language Models,” arXiv preprint arXiv:2311.02379, 2023.<br>[6]	   W. Yu et al., “Language to rewards for robotic skill synthesis,” arXiv preprint arXiv:2306.08647, 2023.<br>[7]	   A. Madaan et al., “Self-refine: Iterative refinement with self-feedback,” Advances in Neural Information Processing Systems, vol. 36, 2024.<br>[8]	   J. Song, Z. Zhou, J. Liu, C. Fang, Z. Shu, and L. Ma, “Self-refined large language model as automated reward function designer for deep reinforcement learning in robotics,” arXiv preprint arXiv:2309.06687, 2023.<br>[9]	   Y. J. Ma et al., “Eureka: Human-level reward design via coding large language models,” arXiv preprint arXiv:2310.12931, 2023.<br>[10]	T. Xie et al., “Text2Reward: Reward Shaping with Language Models for Reinforcement Learning.”<br>[11]	M. Janner, Q. Li, and S. Levine, “Offline reinforcement learning as one big sequence modeling problem,” Advances in neural information processing systems, vol. 34, pp. 1273-1286, 2021.<br>[12]	W. Li, H. Luo, Z. Lin, C. Zhang, Z. Lu, and D. Ye, “A survey on transformers in reinforcement learning,” arXiv preprint arXiv:2301.03044, 2023.<br>[13]	S. Li et al., “Pre-trained language models for interactive decision-making,” Advances in Neural Information Processing Systems, vol. 35, pp. 31199-31212, 2022.<br>[14]	L. Mezghani, P. Bojanowski, K. Alahari, and S. Sukhbaatar, “Think before you act: Unified policy for interleaving language reasoning with actions,” arXiv preprint arXiv:2304.11063, 2023.<br>[15]	R. Shi, Y. Liu, Y. Ze, S. S. Du, and H. Xu, “Unleashing the Power of Pre-trained Language Models for Offline Reinforcement Learning,” arXiv preprint arXiv:2310.20587, 2023.<br>[16]	S. Yao, R. Rao, M. Hausknecht, and K. Narasimhan, “Keep calm and explore: Language models for action generation in text-based games,” arXiv preprint arXiv:2010.02903, 2020.<br>[17]	M. Ahn et al., “Do as i can, not as i say: Grounding language in robotic affordances,” arXiv preprint arXiv:2204.01691, 2022.<br>[18]	H. Hu and D. Sadigh, “Language instructed reinforcement learning for human-ai coordination,” in International Conference on Machine Learning, 2023: PMLR, pp. 13584-13598.<br>[19]	Y. Cao et al., “Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods,” arXiv preprint arXiv:2404.00282, 2024.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><p>[1]       F. Paischer et al., “History compression via language models in reinforcement learning,” in International Conference on Machine Learning, 2022: PMLR, pp. 17156-17185.<br>[2]       J.-C. Pang, X.-Y. Yang, S.-H. Yang, and Y. Yu, “Natural Language-conditioned Reinforcement Learning with Inside-out Task Language Development and Translation,” arXiv preprint arXiv:2302.09368, 2023.<br>[3]       B. A. Spiegel, Z. Yang, W. Jurayj, K. Ta, S. Tellex, and G. Konidaris, “Informing Reinforcement Learning Agents by Grounding Natural Language to Markov Decision Processes.”<br>[4]       M. Kwon, S. M. Xie, K. Bullard, and D. Sadigh, “Reward design with language models,” arXiv preprint arXiv:2303.00001, 2023.<br>[5]    K. Chu, X. Zhao, C. Weber, M. Li, and S. Wermter, “Accelerating Reinforcement Learning of Robotic Manipulations via Feedback from Large Language Models,” arXiv preprint arXiv:2311.02379, 2023.<br>[6]       W. Yu et al., “Language to rewards for robotic skill synthesis,” arXiv preprint arXiv:2306.08647, 2023.<br>[7]       A. Madaan et al., “Self-refine: Iterative refinement with self-feedback,” Advances in Neural Information Processing Systems, vol. 36, 2024.<br>[8]       J. Song, Z. Zhou, J. Liu, C. Fang, Z. Shu, and L. Ma, “Self-refined large language model as automated reward function designer for deep reinforcement learning in robotics,” arXiv preprint arXiv:2309.06687, 2023.<br>[9]       Y. J. Ma et al., “Eureka: Human-level reward design via coding large language models,” arXiv preprint arXiv:2310.12931, 2023.<br>[10]    T. Xie et al., “Text2Reward: Reward Shaping with Language Models for Reinforcement Learning.”<br>[11]    M. Janner, Q. Li, and S. Levine, “Offline reinforcement learning as one big sequence modeling problem,” Advances in neural information processing systems, vol. 34, pp. 1273-1286, 2021.<br>[12]    W. Li, H. Luo, Z. Lin, C. Zhang, Z. Lu, and D. Ye, “A survey on transformers in reinforcement learning,” arXiv preprint arXiv:2301.03044, 2023.<br>[13]    S. Li et al., “Pre-trained language models for interactive decision-making,” Advances in Neural Information Processing Systems, vol. 35, pp. 31199-31212, 2022.<br>[14]    L. Mezghani, P. Bojanowski, K. Alahari, and S. Sukhbaatar, “Think before you act: Unified policy for interleaving language reasoning with actions,” arXiv preprint arXiv:2304.11063, 2023.<br>[15]    R. Shi, Y. Liu, Y. Ze, S. S. Du, and H. Xu, “Unleashing the Power of Pre-trained Language Models for Offline Reinforcement Learning,” arXiv preprint arXiv:2310.20587, 2023.<br>[16]    S. Yao, R. Rao, M. Hausknecht, and K. Narasimhan, “Keep calm and explore: Language models for action generation in text-based games,” arXiv preprint arXiv:2010.02903, 2020.<br>[17]    M. Ahn et al., “Do as i can, not as i say: Grounding language in robotic affordances,” arXiv preprint arXiv:2204.01691, 2022.<br>[18]    H. Hu and D. Sadigh, “Language instructed reinforcement learning for human-ai coordination,” in International Conference on Machine Learning, 2023: PMLR, pp. 13584-13598.<br>[19]    Y. Cao et al., “Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods,” arXiv preprint arXiv:2404.00282, 2024.</p>
 
   </div>
 </article>
@@ -345,5 +345,20 @@
 
 <!-- utterances Comments -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
