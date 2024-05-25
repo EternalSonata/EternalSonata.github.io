@@ -14,7 +14,7 @@
 <meta property="og:description" content="Basic Concepts State: The status of the agent with respect to the environment.  State Space: The set of all states .  Action.  Action Space of a State: .  State Transition: .  Using Probability to des">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-23T15:41:18.000Z">
-<meta property="article:modified_time" content="2024-05-24T15:26:39.668Z">
+<meta property="article:modified_time" content="2024-05-25T10:01:35.339Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -168,7 +168,8 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -222,7 +223,7 @@ mjx-container[display="true"] + br {
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Concepts"><span class="toc-number">1.</span> <span class="toc-text">Basic Concepts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-Decision-Process"><span class="toc-number">2.</span> <span class="toc-text">Markov Decision Process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-Value"><span class="toc-number">3.</span> <span class="toc-text">State Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Equation"><span class="toc-number">4.</span> <span class="toc-text">Bellman Equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action-Value"><span class="toc-number">5.</span> <span class="toc-text">Action Value</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Concepts"><span class="toc-number">1.</span> <span class="toc-text">Basic Concepts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-Decision-Process"><span class="toc-number">2.</span> <span class="toc-text">Markov Decision Process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-Value"><span class="toc-number">3.</span> <span class="toc-text">State Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Equation"><span class="toc-number">4.</span> <span class="toc-text">Bellman Equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action-Value"><span class="toc-number">5.</span> <span class="toc-text">Action Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Optimality-Equation"><span class="toc-number">6.</span> <span class="toc-text">Bellman Optimality Equation</span></a></li></ol>
       </div>
     
   </span>
@@ -343,6 +344,11 @@ v_\pi(s)=\mathbb{E}[G_t|S_t=s]</script><p>Here, we should note that if the traje
 \underbrace{\mathbb{E}[G_t|S_t=s]}_{v_\pi(s)}=\sum_a\underbrace{\mathbb{E}[G_t|S_t=s,A_t=a]}_{q_\pi(s,a)}\pi(a|s), \\
 v_{\pi}(s)=\sum_a\pi(a|s)\Big[\underbrace{\sum_rp(r|s,a)r+\gamma\sum_{s^{\prime}}p(s^{\prime}|s,a)v_\pi(s^{\prime})}_{q_\pi(s,a)}\Big]</script></li>
 </ul>
+<h2 id="Bellman-Optimality-Equation"><a href="#Bellman-Optimality-Equation" class="headerlink" title="Bellman Optimality Equation"></a>Bellman Optimality Equation</h2><ul>
+<li><script type="math/tex; mode=display">
+v_{\pi}(s)=\max_\pi\sum_a\pi(a|s)\Big[\underbrace{\sum_rp(r|s,a)r+\gamma\sum_{s^{\prime}}p(s^{\prime}|s,a)v_\pi(s^{\prime})}_{q_\pi(s,a)}\Big]</script>we can also write the matrix form<script type="math/tex; mode=display">
+v=\max_\pi(r_\pi+\gamma P_\pi v)</script></li>
+</ul>
 <!-- $$
 i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
 $$
@@ -388,7 +394,7 @@ $i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi$
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Concepts"><span class="toc-number">1.</span> <span class="toc-text">Basic Concepts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-Decision-Process"><span class="toc-number">2.</span> <span class="toc-text">Markov Decision Process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-Value"><span class="toc-number">3.</span> <span class="toc-text">State Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Equation"><span class="toc-number">4.</span> <span class="toc-text">Bellman Equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action-Value"><span class="toc-number">5.</span> <span class="toc-text">Action Value</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Concepts"><span class="toc-number">1.</span> <span class="toc-text">Basic Concepts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-Decision-Process"><span class="toc-number">2.</span> <span class="toc-text">Markov Decision Process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#State-Value"><span class="toc-number">3.</span> <span class="toc-text">State Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Equation"><span class="toc-number">4.</span> <span class="toc-text">Bellman Equation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action-Value"><span class="toc-number">5.</span> <span class="toc-text">Action Value</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bellman-Optimality-Equation"><span class="toc-number">6.</span> <span class="toc-text">Bellman Optimality Equation</span></a></li></ol>
       </div>
     
 
@@ -500,21 +506,5 @@ $i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi$
 
 <!-- utterances Comments -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
